@@ -113,26 +113,26 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         centerTitle: true,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings_outlined),
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                isScrollControlled: true,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(20),
-                  ),
-                ),
-                builder: (context) => ModelSelector(
-                  mlService: _mlService,
-                  onModelChanged: _onModelChanged,
-                ),
-              );
-            },
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.settings_outlined),
+        //     onPressed: () {
+        //       showModalBottomSheet(
+        //         context: context,
+        //         isScrollControlled: true,
+        //         shape: const RoundedRectangleBorder(
+        //           borderRadius: BorderRadius.vertical(
+        //             top: Radius.circular(20),
+        //           ),
+        //         ),
+        //         builder: (context) => ModelSelector(
+        //           mlService: _mlService,
+        //           onModelChanged: _onModelChanged,
+        //         ),
+        //       );
+        //     },
+        //   ),
+        // ],
       ),
       body: SafeArea(
         child: Padding(
@@ -140,48 +140,6 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // Model Status Card
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    children: [
-                      Icon(
-                        _mlService.isModelLoaded 
-                          ? Icons.check_circle_outline
-                          : Icons.error_outline,
-                        color: _mlService.isModelLoaded 
-                          ? Colors.green 
-                          : Colors.orange,
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Model Status',
-                              style: theme.textTheme.titleSmall?.copyWith(
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              _currentModelName ?? 'No model loaded',
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                color: theme.colorScheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              
-              const SizedBox(height: 16),
-              
               // Image Preview
               Expanded(
                 flex: 3,
