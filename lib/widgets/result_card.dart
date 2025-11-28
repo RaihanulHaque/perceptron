@@ -37,11 +37,12 @@ class ResultCard extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -107,9 +108,9 @@ class ResultCard extends StatelessWidget {
                     curve: Curves.easeOutBack,
                     builder: (context, value, child) {
                       return Transform.scale(
-                        scale: value,
+                        scale: value.clamp(0.0, 1.0),
                         child: Opacity(
-                          opacity: value,
+                          opacity: value.clamp(0.0, 1.0),
                           child: Container(
                             // Add margin for second prediction to make it appear smaller
                             margin: isTopPrediction 
@@ -298,6 +299,7 @@ class ResultCard extends StatelessWidget {
               }).toList(),
             ),
           ],
+        ),
         ),
       ),
     );

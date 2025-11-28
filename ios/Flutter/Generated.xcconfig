@@ -1,6 +1,6 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/home/lelouch/Code/flutter
-FLUTTER_APPLICATION_PATH=/home/lelouch/Code/perceptron
+FLUTTER_ROOT=/home/rahi/flutter
+FLUTTER_APPLICATION_PATH=/home/rahi/Code/perceptron
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_TARGET=lib/main.dart
 FLUTTER_BUILD_DIR=build
