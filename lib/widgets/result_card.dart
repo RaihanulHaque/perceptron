@@ -19,19 +19,19 @@ class ResultCard extends StatelessWidget {
           end: Alignment.bottomRight,
           colors: [
             theme.colorScheme.surface,
-            theme.colorScheme.surface.withOpacity(0.8),
+            theme.colorScheme.surface.withValues(alpha: 0.8),
           ],
         ),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: theme.colorScheme.primary.withOpacity(0.1),
+            color: theme.colorScheme.primary.withValues(alpha: 0.1),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
         ],
         border: Border.all(
-          color: theme.colorScheme.outline.withOpacity(0.1),
+          color: theme.colorScheme.outline.withValues(alpha: 0.1),
           width: 1,
         ),
       ),
@@ -47,13 +47,13 @@ class ResultCard extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    theme.colorScheme.primary.withOpacity(0.1),
-                    theme.colorScheme.secondary.withOpacity(0.05),
+                    theme.colorScheme.primary.withValues(alpha: 0.1),
+                    theme.colorScheme.secondary.withValues(alpha: 0.05),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: theme.colorScheme.primary.withOpacity(0.2),
+                  color: theme.colorScheme.primary.withValues(alpha: 0.2),
                   width: 1,
                 ),
               ),
@@ -67,7 +67,7 @@ class ResultCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                       boxShadow: [
                         BoxShadow(
-                          color: theme.colorScheme.primary.withOpacity(0.3),
+                          color: theme.colorScheme.primary.withValues(alpha: 0.3),
                           blurRadius: 6,
                           offset: const Offset(0, 2),
                         ),
@@ -123,26 +123,26 @@ class ResultCard extends StatelessWidget {
                                 end: Alignment.bottomRight,
                                 colors: isTopPrediction
                                   ? [
-                                      theme.colorScheme.primary.withOpacity(0.15),
-                                      theme.colorScheme.secondary.withOpacity(0.1),
+                                      theme.colorScheme.primary.withValues(alpha: 0.15),
+                                      theme.colorScheme.secondary.withValues(alpha: 0.1),
                                     ]
                                   : [
-                                      theme.colorScheme.surfaceVariant.withOpacity(0.2),
-                                      theme.colorScheme.surfaceVariant.withOpacity(0.05),
+                                      theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.2),
+                                      theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.05),
                                     ],
                               ),
                               borderRadius: BorderRadius.circular(isTopPrediction ? 12 : 10),
                               border: Border.all(
                                 color: isTopPrediction 
-                                  ? theme.colorScheme.primary.withOpacity(0.3)
-                                  : theme.colorScheme.outline.withOpacity(0.15),
+                                  ? theme.colorScheme.primary.withValues(alpha: 0.3)
+                                  : theme.colorScheme.outline.withValues(alpha: 0.15),
                                 width: isTopPrediction ? 2 : 1,
                               ),
                               boxShadow: [
                                 BoxShadow(
                                   color: isTopPrediction 
-                                    ? theme.colorScheme.primary.withOpacity(0.2)
-                                    : theme.colorScheme.shadow.withOpacity(0.05),
+                                    ? theme.colorScheme.primary.withValues(alpha: 0.2)
+                                    : theme.colorScheme.shadow.withValues(alpha: 0.05),
                                   blurRadius: isTopPrediction ? 8 : 3,
                                   offset: const Offset(0, 2),
                                 ),
@@ -159,11 +159,11 @@ class ResultCard extends StatelessWidget {
                                       colors: isTopPrediction
                                         ? [
                                             theme.colorScheme.primary,
-                                            theme.colorScheme.primary.withOpacity(0.8),
+                                            theme.colorScheme.primary.withValues(alpha: 0.8),
                                           ]
                                         : [
-                                            theme.colorScheme.outline.withOpacity(0.5),
-                                            theme.colorScheme.outline.withOpacity(0.3),
+                                            theme.colorScheme.outline.withValues(alpha: 0.5),
+                                            theme.colorScheme.outline.withValues(alpha: 0.3),
                                           ],
                                     ),
                                     borderRadius: BorderRadius.circular(isTopPrediction ? 16 : 14),
@@ -194,7 +194,7 @@ class ResultCard extends StatelessWidget {
                                               borderRadius: BorderRadius.circular(5),
                                               boxShadow: [
                                                 BoxShadow(
-                                                  color: Colors.amber.withOpacity(0.5),
+                                                  color: Colors.amber.withValues(alpha: 0.5),
                                                   blurRadius: 3,
                                                 ),
                                               ],
@@ -228,7 +228,7 @@ class ResultCard extends StatelessWidget {
                                                   : FontWeight.w500,
                                                 color: isTopPrediction
                                                   ? theme.colorScheme.primary
-                                                  : theme.colorScheme.onSurface.withOpacity(0.8),
+                                                  : theme.colorScheme.onSurface.withValues(alpha: 0.8),
                                                 fontSize: isTopPrediction ? null : 13,
                                               ),
                                             ),
@@ -239,10 +239,10 @@ class ResultCard extends StatelessWidget {
                                               vertical: 2
                                             ),
                                             decoration: BoxDecoration(
-                                              color: _getConfidenceColor(confidence, theme).withOpacity(0.2),
+                                              color: _getConfidenceColor(confidence, theme).withValues(alpha: 0.2),
                                               borderRadius: BorderRadius.circular(isTopPrediction ? 8 : 6),
                                               border: Border.all(
-                                                color: _getConfidenceColor(confidence, theme).withOpacity(0.5),
+                                                color: _getConfidenceColor(confidence, theme).withValues(alpha: 0.5),
                                                 width: 1,
                                               ),
                                             ),
@@ -264,7 +264,7 @@ class ResultCard extends StatelessWidget {
                                         height: isTopPrediction ? 6 : 4,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(isTopPrediction ? 3 : 2),
-                                          color: theme.colorScheme.outline.withOpacity(0.2),
+                                          color: theme.colorScheme.outline.withValues(alpha: 0.2),
                                         ),
                                         child: ClipRRect(
                                           borderRadius: BorderRadius.circular(isTopPrediction ? 3 : 2),
