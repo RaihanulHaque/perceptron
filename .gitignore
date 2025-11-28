@@ -46,3 +46,4 @@ app.*.map.json
 
 
 assets/models/fasternet_m.in1k_seefood.tflite
+assets/models/
